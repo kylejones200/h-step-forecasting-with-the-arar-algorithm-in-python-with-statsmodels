@@ -59,11 +59,11 @@ def main():
     train = y.iloc[:-test_size]
     test = y.iloc[-test_size:] if test_size > 0 else None
     
-                z = apply_differencing(y)
-        plot_series_comparison(y, z, output_dir / 'arar_series_visualization.png')
+    z = apply_differencing(y)
+    plot_series_comparison(y, z, output_dir / 'arar_series_visualization.png')
     
     if config['analysis']['run_arar']:
-                z_train = apply_differencing(train)
+        z_train = apply_differencing(train)
         
         acf_vals = acf(z_train, nlags=config['model']['arar']['max_lag'])
         
@@ -89,7 +89,7 @@ def main():
             logging.info(f"ARAR MAPE: {mape_arar:.4f}")
         
         if config['analysis']['run_arima_comparison']:
-                        arima_model = fit_arima_model(train, tuple(config['model']['arima']['order']))
+            arima_model = fit_arima_model(train, tuple(config['model']['arima']['order']))
             y_forecast_arima = generate_arima_forecast(arima_model, h)
             y_forecast_arima.index = forecast_index
             

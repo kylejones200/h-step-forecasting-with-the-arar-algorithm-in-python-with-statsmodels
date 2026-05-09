@@ -64,7 +64,7 @@ def calculate_mape(actual: pd.Series, predicted: pd.Series) -> float:
 
 def plot_series_comparison(original: pd.Series, differenced: np.ndarray,
                           output_path: Path):
- """Plot original and differenced series """
+    """Plot original and differenced series """
     fig, axes = plt.subplots(2, 1, figsize=(10, 8))
     
     axes[0].plot(original.index, original.values, color="#4A90A4", linewidth=1.2)
@@ -84,7 +84,7 @@ def plot_series_comparison(original: pd.Series, differenced: np.ndarray,
 def plot_forecast_comparison(y: pd.Series, y_forecast_arar: np.ndarray,
                             forecast_index: pd.DatetimeIndex, h: int,
                             output_path: Path):
- """Plot forecast """
+    """Plot forecast """
     fig, ax = plt.subplots(figsize=(12, 6))
     
     ax.plot(y.index, y.values, label="Original Series", color="#4A90A4", linewidth=1.2)
@@ -102,7 +102,7 @@ def plot_arar_vs_arima(y: pd.Series, train: pd.Series, test: pd.Series,
                       y_forecast_arar: pd.Series, y_forecast_arima: pd.Series,
                       forecast_index: pd.DatetimeIndex, mape_arar: float,
                       mape_arima: float, output_path: Path):
- """Plot ARAR vs ARIMA forecast comparison """
+    """Plot ARAR vs ARIMA forecast comparison """
     fig, ax = plt.subplots(figsize=(12, 6))
     
     ax.plot(y.index, y.values, label="Historical Data", color="#4A90A4", linewidth=1.2)
