@@ -34,8 +34,7 @@ def select_reduced_lags(acf_vals: np.ndarray, max_lag: int = 20,
         threshold = 0.2
         significant_lags = np.where(np.abs(acf_vals[1:]) > threshold)[0] + 1
         return significant_lags.tolist()[:10]
-    else:
-        return [1, 2, 4, 8]
+    return [1, 2, 4, 8]
 
 def fit_arar_model(differenced_data: np.ndarray, lags: List[int]):
     """Fit ARAR model using AutoReg with selected lags."""

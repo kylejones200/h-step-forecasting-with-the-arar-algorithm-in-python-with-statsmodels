@@ -17,9 +17,9 @@ Originally proposed by McLeod and Hipel (1978), the ARAR algorithm is a practica
 ### Understanding the ARAR Algorithm
 The ARAR algorithm is designed to model time series data efficiently while avoiding the complexity of full autoregressive integrated moving average (ARIMA) models. It operates in three main stages:
 
-1.  [**Data Preprocessing:** The series undergoes transformation and differencing to stabilize variance and remove non-stationarity.]
-2.  [**Reduced Lag Selection:** The method selects a reduced subset of lagged values for modeling, avoiding unnecessary complexity.]
-3.  [**Final AR Modeling:** An autoregressive model is fitted to the transformed and reduced data.]
+1.  [Data Preprocessing: The series undergoes transformation and differencing to stabilize variance and remove non-stationarity.]
+2.  [Reduced Lag Selection: The method selects a reduced subset of lagged values for modeling, avoiding unnecessary complexity.]
+3.  [Final AR Modeling: An autoregressive model is fitted to the transformed and reduced data.]
 
 This streamlined approach is computationally efficient, making it well-suited for practical applications in time series forecasting.
 
