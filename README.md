@@ -1,5 +1,9 @@
 # H-Step Forecasting with the ARAR Algorithm
 
+Published: yes
+Medium: [https://medium.com/@kyle-t-jones/h-step-forecasting-with-the-arar-algorithm-in-python-with-statsmodels-43017792a863](https://medium.com/@kyle-t-jones/h-step-forecasting-with-the-arar-algorithm-in-python-with-statsmodels-43017792a863)
+
+
 This project demonstrates the ARAR (AutoRegressive AutoRegressive) algorithm for h-step ahead forecasting, with comparison to ARIMA.
 
 ## Project Structure
