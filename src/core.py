@@ -78,26 +78,28 @@ def plot_series_comparison(
     original: pd.Series, differenced: np.ndarray, output_path: Path
 ):
     """Plot original and differenced series"""
-    if plot:
-        fig, axes = plt.subplots(2, 1, figsize=(10, 8))
+    if not plot:
+        return
 
-        axes[0].plot(original.index, original.values, color="#4A90A4", linewidth=1.2)
-        axes[0].set_xlabel("Time")
-        axes[0].set_ylabel("Value")
+    fig, axes = plt.subplots(2, 1, figsize=(10, 8))
 
-        diff_index = original.index[1:]
-        axes[1].plot(diff_index, differenced, color="#D4A574", linewidth=1.2)
-        axes[1].set_xlabel("Time")
-        axes[1].set_ylabel("Differenced Value")
+    axes[0].plot(original.index, original.values, color="#4A90A4", linewidth=1.2)
+    axes[0].set_xlabel("Time")
+    axes[0].set_ylabel("Value")
 
-        plt.suptitle(
-            "ARAR Algorithm: Original and Differenced Series",
-            fontsize=12,
-            y=0.98,
-            color="0.2",
-        )
-        plt.savefig(output_path, dpi=100, bbox_inches="tight")
-        plt.close()
+    diff_index = original.index[1:]
+    axes[1].plot(diff_index, differenced, color="#D4A574", linewidth=1.2)
+    axes[1].set_xlabel("Time")
+    axes[1].set_ylabel("Differenced Value")
+
+    plt.suptitle(
+        "ARAR Algorithm: Original and Differenced Series",
+        fontsize=12,
+        y=0.98,
+        color="0.2",
+    )
+    plt.savefig(output_path, dpi=100, bbox_inches="tight")
+    plt.close()
 
 
 def plot_forecast_comparison(
@@ -108,27 +110,29 @@ def plot_forecast_comparison(
     output_path: Path,
 ):
     """Plot forecast"""
-    if plot:
-        fig, ax = plt.subplots(figsize=(12, 6))
+    if not plot:
+        return
 
-        ax.plot(
-            y.index, y.values, label="Original Series", color="#4A90A4", linewidth=1.2
-        )
-        ax.plot(
-            forecast_index,
-            y_forecast_arar,
-            label=f"{h}-Step Forecast",
-            color="#D4A574",
-            linewidth=1.2,
-            linestyle="--",
-        )
+    fig, ax = plt.subplots(figsize=(12, 6))
 
-        ax.set_xlabel("Time")
-        ax.set_ylabel("Value")
-        ax.legend(loc="best")
+    ax.plot(
+        y.index, y.values, label="Original Series", color="#4A90A4", linewidth=1.2
+    )
+    ax.plot(
+        forecast_index,
+        y_forecast_arar,
+        label=f"{h}-Step Forecast",
+        color="#D4A574",
+        linewidth=1.2,
+        linestyle="--",
+    )
 
-        plt.savefig(output_path, dpi=100, bbox_inches="tight")
-        plt.close()
+    ax.set_xlabel("Time")
+    ax.set_ylabel("Value")
+    ax.legend(loc="best")
+
+    plt.savefig(output_path, dpi=100, bbox_inches="tight")
+    plt.close()
 
 
 def plot_arar_vs_arima(
@@ -143,33 +147,35 @@ def plot_arar_vs_arima(
     output_path: Path,
 ):
     """Plot ARAR vs ARIMA forecast comparison"""
-    if plot:
-        fig, ax = plt.subplots(figsize=(12, 6))
+    if not plot:
+        return
 
-        ax.plot(
-            y.index, y.values, label="Historical Data", color="#4A90A4", linewidth=1.2
-        )
-        ax.plot(
-            forecast_index,
-            y_forecast_arar,
-            label="ARAR Forecast",
-            color="#D4A574",
-            linewidth=1.2,
-            linestyle="--",
-        )
-        ax.plot(
-            forecast_index,
-            y_forecast_arima,
-            label="ARIMA Forecast",
-            color="#8B6F9E",
-            linewidth=1.2,
-            linestyle=":",
-        )
+    fig, ax = plt.subplots(figsize=(12, 6))
 
-        title = f"ARAR vs ARIMA Forecasts: MAPE (ARAR) = {mape_arar:.4f}, MAPE (ARIMA) = {mape_arima:.4f}"
-        ax.set_xlabel("Time")
-        ax.set_ylabel("Value")
-        ax.legend(loc="best")
+    ax.plot(
+        y.index, y.values, label="Historical Data", color="#4A90A4", linewidth=1.2
+    )
+    ax.plot(
+        forecast_index,
+        y_forecast_arar,
+        label="ARAR Forecast",
+        color="#D4A574",
+        linewidth=1.2,
+        linestyle="--",
+    )
+    ax.plot(
+        forecast_index,
+        y_forecast_arima,
+        label="ARIMA Forecast",
+        color="#8B6F9E",
+        linewidth=1.2,
+        linestyle=":",
+    )
 
-        plt.savefig(output_path, dpi=100, bbox_inches="tight")
-        plt.close()
+    title = f"ARAR vs ARIMA Forecasts: MAPE (ARAR) = {mape_arar:.4f}, MAPE (ARIMA) = {mape_arima:.4f}"
+    ax.set_xlabel("Time")
+    ax.set_ylabel("Value")
+    ax.legend(loc="best")
+
+    plt.savefig(output_path, dpi=100, bbox_inches="tight")
+    plt.close()

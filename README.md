@@ -45,3 +45,11 @@ The ARAR algorithm:
 - The algorithm requires sufficient data for differencing and lag selection.
 - Reduced lag sets (powers of 2) are computationally efficient but may not capture all dependencies.
 - ARAR is compared with ARIMA to demonstrate relative performance.
+
+## Disclaimer
+
+Educational/demo code only. Not financial, safety, or engineering advice. Use at your own risk. Verify results independently before any production or operational use.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
