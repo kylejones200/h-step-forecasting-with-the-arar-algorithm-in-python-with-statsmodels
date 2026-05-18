@@ -6,6 +6,14 @@ Medium: [https://medium.com/@kyle-t-jones/h-step-forecasting-with-the-arar-algor
 
 This project demonstrates the ARAR (AutoRegressive AutoRegressive) algorithm for h-step ahead forecasting, with comparison to ARIMA.
 
+## Business context
+
+In time series forecasting, we often need to predict multiple steps ahead, which is known as *h-step forecasting*. The challenge lies in capturing both short-term fluctuations and long-term trends effectively. The AutoRegressive-to-AutoRegressive (ARAR) algorithm is particularly useful for forecasting time series with strong short-term dependencies but weak long-term correlations.
+
+Originally proposed by McLeod and Hipel (1978), the ARAR algorithm is a practical approach that blends simple transformation, differencing, and autoregressive (AR) modeling to produce robust forecasts. This chapter explores the ARAR methodology, its advantages, and a Python implementation using real-world data.
+
+The ARAR algorithm is designed to model time series data efficiently while avoiding the complexity of full autoregressive integrated moving average (ARIMA) models. It operates in three main stages:
+
 ## Project Structure
 
 ```
