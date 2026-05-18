@@ -68,7 +68,7 @@ def plot_series_comparison(original: pd.Series, differenced: np.ndarray, output_
     plt.savefig(output_path, dpi=100, bbox_inches='tight')
     plt.close()
 
-def plot_forecast_comparison(y: pd.Series, y_forecast_arar: np.ndarray, forecast_index: pd.DatetimeIndex, h: int, output_path: Path, plot: bool = False):
+def plot_forecast_comparison(y: pd.Series, y_forecast_arar: np.ndarray, forecast_index: pd.DatetimeIndex, h: int, output_path: Path, plot: bool=False):
     """Plot forecast"""
     if not plot:
         return
@@ -81,7 +81,7 @@ def plot_forecast_comparison(y: pd.Series, y_forecast_arar: np.ndarray, forecast
     plt.savefig(output_path, dpi=100, bbox_inches='tight')
     plt.close()
 
-def plot_arar_vs_arima(y: pd.Series, train: pd.Series, test: pd.Series, y_forecast_arar: pd.Series, y_forecast_arima: pd.Series, forecast_index: pd.DatetimeIndex, mape_arar: float, mape_arima: float, output_path: Path, plot: bool = False):
+def plot_arar_vs_arima(y: pd.Series, train: pd.Series, test: pd.Series, y_forecast_arar: pd.Series, y_forecast_arima: pd.Series, forecast_index: pd.DatetimeIndex, mape_arar: float, mape_arima: float, output_path: Path, plot: bool=False):
     """Plot ARAR vs ARIMA forecast comparison"""
     if not plot:
         return
